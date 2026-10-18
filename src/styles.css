@@ -21,9 +21,9 @@
   html.light {
     --bg-primary: #fffcf8;
     --bg-secondary: #f8fafc;
-    --bg-card: rgba(226, 232, 240, 0.5);
-    --bg-card-hover: rgba(226, 232, 240, 0.7);
-    --border-color: rgba(148, 163, 184, 0.3);
+    --bg-card: rgba(226, 232, 240, 0.42);
+    --bg-card-hover: rgba(226, 232, 240, 0.6);
+    --border-color: rgba(148, 163, 184, 0.28);
     --border-color-hover: rgba(99, 102, 241, 0.45);
     --text-primary: #0f172a;
     --text-secondary: #334155;
@@ -163,39 +163,39 @@ html.light .ambient-glow {
 
 /* Glass Panels & Cards */
 html.light .glass-panel {
-  background-color: rgba(226, 232, 240, 0.5) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03) !important;
+  background-color: rgba(226, 232, 240, 0.42) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.28) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.02) !important;
 }
 
 html.light .glass-panel:hover {
-  background-color: rgba(226, 232, 240, 0.7) !important;
+  background-color: rgba(226, 232, 240, 0.6) !important;
   border-color: rgba(99, 102, 241, 0.45) !important;
-  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.08) !important;
 }
 
 /* macOS Window Header Bar */
 html.light .bg-black\/50 {
-  background-color: rgba(203, 213, 225, 0.45) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom-color: rgba(148, 163, 184, 0.35) !important;
+  background-color: rgba(203, 213, 225, 0.35) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-bottom-color: rgba(148, 163, 184, 0.28) !important;
 }
 
 /* CherryHud Spotlight Card */
 html.light .glass-cherry {
-  background: linear-gradient(135deg, rgba(254, 226, 226, 0.4) 0%, rgba(226, 232, 240, 0.55) 100%) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-color: rgba(244, 63, 94, 0.3) !important;
-  box-shadow: 0 14px 40px -10px rgba(244, 63, 94, 0.08) !important;
+  background: linear-gradient(135deg, rgba(254, 226, 226, 0.3) 0%, rgba(226, 232, 240, 0.45) 100%) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(244, 63, 94, 0.28) !important;
+  box-shadow: 0 14px 40px -10px rgba(244, 63, 94, 0.07) !important;
 }
 
 html.light .glass-cherry:hover {
-  border-color: rgba(244, 63, 94, 0.5) !important;
-  box-shadow: 0 18px 45px -10px rgba(244, 63, 94, 0.14) !important;
+  border-color: rgba(244, 63, 94, 0.45) !important;
+  box-shadow: 0 18px 45px -10px rgba(244, 63, 94, 0.12) !important;
 }
 
 /* Headings & Text Color in Light Mode */
@@ -256,11 +256,11 @@ html.light .text-emerald-400 {
 
 /* Header Navbar */
 html.light header .glass-panel {
-  background-color: rgba(241, 245, 249, 0.55) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+  background-color: rgba(226, 232, 240, 0.45) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.28) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
 }
 
 html.light header nav a:not(.text-rose-400) {
@@ -276,26 +276,26 @@ html.light header nav a:hover {
 html.light header button.bg-slate-800\/80,
 html.light header button.bg-slate-800,
 html.light button.bg-slate-800 {
-  background-color: rgba(203, 213, 225, 0.4) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-color: rgba(148, 163, 184, 0.35) !important;
+  background-color: rgba(203, 213, 225, 0.35) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.28) !important;
   color: #1e293b !important;
 }
 
 html.light header button.bg-slate-800\/80:hover,
 html.light header button.bg-slate-800:hover,
 html.light button.bg-slate-800:hover {
-  border-color: rgba(99, 102, 241, 0.5) !important;
-  background-color: rgba(203, 213, 225, 0.65) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+  background-color: rgba(203, 213, 225, 0.55) !important;
 }
 
 /* Mobile Dropdown Menu */
 html.light .md\:hidden.glass-panel {
-  background-color: rgba(241, 245, 249, 0.75) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
+  background-color: rgba(226, 232, 240, 0.65) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.28) !important;
 }
 
 html.light .md\:hidden.glass-panel a {
@@ -303,35 +303,35 @@ html.light .md\:hidden.glass-panel a {
 }
 
 html.light .md\:hidden.glass-panel a:hover {
-  background-color: rgba(203, 213, 225, 0.45) !important;
+  background-color: rgba(203, 213, 225, 0.4) !important;
 }
 
 /* Inner Cards & Containers */
 html.light .bg-black\/50,
 html.light .bg-black\/40,
 html.light .bg-black\/30 {
-  background-color: rgba(203, 213, 225, 0.35) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-color: rgba(148, 163, 184, 0.25) !important;
+  background-color: rgba(203, 213, 225, 0.28) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
 }
 
 html.light .bg-slate-900\/60,
 html.light .bg-slate-900\/80,
 html.light .bg-slate-900 {
-  background-color: rgba(226, 232, 240, 0.45) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
+  background-color: rgba(226, 232, 240, 0.38) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.25) !important;
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
 }
 
 html.light .bg-white\/5,
 html.light .bg-white\/10 {
-  background-color: rgba(203, 213, 225, 0.35) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
+  background-color: rgba(203, 213, 225, 0.25) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.25) !important;
   color: #1e293b !important;
 }
 
@@ -339,7 +339,7 @@ html.light .border-white\/10,
 html.light .border-white\/5,
 html.light .border-white\/15,
 html.light .border-white\/20 {
-  border-color: rgba(148, 163, 184, 0.25) !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
 }
 
 /* Tech Badges in Hero */
@@ -394,11 +394,11 @@ html.light footer {
 }
 
 html.light footer .glass-panel {
-  background-color: rgba(241, 245, 249, 0.55) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border-color: rgba(148, 163, 184, 0.3) !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+  background-color: rgba(226, 232, 240, 0.45) !important;
+  backdrop-filter: blur(2.5px) !important;
+  -webkit-backdrop-filter: blur(2.5px) !important;
+  border-color: rgba(148, 163, 184, 0.28) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
 }
 
 html.light footer .text-slate-400 {
