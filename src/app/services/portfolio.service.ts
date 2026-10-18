@@ -10,6 +10,7 @@ export class PortfolioService {
   readonly currentLang = signal<Language>('fr');
   readonly currentTheme = signal<Theme>('light');
   readonly isMobileMenuOpen = signal<boolean>(false);
+  readonly activeSection = signal<string>('about');
 
   // Structured data
   readonly experiences: JobExperience[] = EXPERIENCES;
@@ -56,6 +57,30 @@ export class PortfolioService {
         localStorage.setItem('portfolio_lang', lang);
       }
     });
+
+    // Scroll spy listener
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const sectionIds = ['about', 'projects', 'experience', 'skills', 'contact'];
+        const scrollPosition = window.scrollY + 220;
+
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+          this.activeSection.set('contact');
+          return;
+        }
+
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sectionIds[i]);
+          if (el && el.offsetTop <= scrollPosition) {
+            this.activeSection.set(sectionIds[i]);
+            return;
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      setTimeout(handleScroll, 120);
+    }
   }
 
   toggleLanguage(): void {
@@ -72,6 +97,10 @@ export class PortfolioService {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen.set(false);
+  }
+
+  setActiveSection(id: string): void {
+    this.activeSection.set(id);
   }
 
   readonly email = 'mat.ricard3@outlook.com';

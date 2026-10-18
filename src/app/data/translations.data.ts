@@ -78,8 +78,10 @@ export const TRANSLATIONS = {
     contactEmailDesc: "mat.ricard3@outlook.com",
     contactLinkedInLabel: "LinkedIn Professionnel",
     contactLinkedInDesc: "linkedin.com/in/math-ricard",
+    contactGitHubLabel: "Profil GitHub",
+    contactGitHubDesc: "github.com/Matricard",
     contactLocationLabel: "Localisation",
-    contactLocationDesc: "Grand Montréal, Québec, Canada",
+    contactLocationDesc: "Longueuil, Québec, Canada",
     btnDirectContact: "M'écrire par courriel",
     copiedText: "Courriel copié !",
 
@@ -165,8 +167,10 @@ export const TRANSLATIONS = {
     contactEmailDesc: "mat.ricard3@outlook.com",
     contactLinkedInLabel: "Professional LinkedIn",
     contactLinkedInDesc: "linkedin.com/in/math-ricard",
+    contactGitHubLabel: "GitHub Profile",
+    contactGitHubDesc: "github.com/Matricard",
     contactLocationLabel: "Location",
-    contactLocationDesc: "Greater Montreal, Quebec, Canada",
+    contactLocationDesc: "Longueuil, Quebec, Canada",
     btnDirectContact: "Send me an email",
     copiedText: "Email copied!",
 

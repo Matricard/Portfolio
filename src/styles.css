@@ -112,6 +112,22 @@ button.bg-slate-800\/80 {
   -webkit-backdrop-filter: blur(2.5px);
 }
 
+/* Active Nav Indicator (Dark Mode) */
+header nav a.nav-active {
+  color: #ffffff !important;
+  background-color: rgba(99, 102, 241, 0.25) !important;
+  border: 1px solid rgba(129, 140, 248, 0.4) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2) !important;
+}
+
+.md\:hidden.glass-panel a.nav-active {
+  color: #ffffff !important;
+  background-color: rgba(99, 102, 241, 0.2) !important;
+  border-left: 3px solid #818cf8 !important;
+  font-weight: 600 !important;
+}
+
 .ambient-glow {
   position: absolute;
   border-radius: 9999px;
@@ -270,6 +286,22 @@ html.light header nav a:not(.text-rose-400) {
 html.light header nav a:hover {
   color: #0f172a !important;
   background-color: rgba(203, 213, 225, 0.45) !important;
+}
+
+/* Active Nav Indicator (Light Mode) */
+html.light header nav a.nav-active {
+  color: #4338ca !important;
+  background-color: rgba(99, 102, 241, 0.12) !important;
+  border: 1px solid rgba(99, 102, 241, 0.28) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.08) !important;
+}
+
+html.light .md\:hidden.glass-panel a.nav-active {
+  color: #4338ca !important;
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  border-left: 3px solid #4338ca !important;
+  font-weight: 600 !important;
 }
 
 /* Header Buttons & Switches */
