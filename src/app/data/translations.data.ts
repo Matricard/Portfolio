@@ -29,9 +29,9 @@ export const TRANSLATIONS = {
     statStack: ".NET & C#",
     statStackLabel: "ASP.NET Core, EF Core, Microservices",
     statLang: "Bilingue",
-    statLangLine1: "Français natif",
+    statLangLine1: "Français langue maternelle",
     statLangLine2: "Anglais fonctionnel",
-    statLangLabel: "Français natif • Anglais fonctionnel",
+    statLangLabel: "Français langue maternelle • Anglais fonctionnel",
     statProduct: "CherryHud",
     statProductLabel: "Application macOS Open Source (MIT)",
 
