@@ -1,0 +1,603 @@
+<!-- Animated Cosmic Galaxy Background -->
+<app-cosmic-background></app-cosmic-background>
+
+<!-- Header / Navigation Bar -->
+<header class="sticky top-4 z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-200">
+  <div class="glass-panel rounded-2xl shadow-2xl backdrop-blur-2xl transition-all duration-200 overflow-hidden">
+    <div class="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand with Profile Photo -->
+      <a href="#about" class="flex items-center gap-3 group">
+        <img src="images/profile.jpg" alt="Mathieu Ricard" width="36" height="36" class="w-9 h-9 rounded-xl object-cover ring-1 ring-white/20 group-hover:ring-indigo-400 transition-all shadow-md" />
+        <span class="font-bold text-sm text-white tracking-tight hidden sm:inline group-hover:text-indigo-300 transition-colors">Mathieu Ricard</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#projects" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navProjects }}</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navExperience }}</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navSkills }}</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navContact }}</a>
+      </nav>
+
+      <!-- Actions & Switches -->
+      <div class="flex items-center gap-3 ml-auto md:ml-0">
+        <!-- Language Switcher -->
+        <button (click)="ps.toggleLanguage()" class="px-2.5 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 hover:border-indigo-500/50 text-xs font-mono transition-all flex items-center gap-1 cursor-pointer" title="Changer de langue / Switch language">
+          @if (ps.currentLang() === 'fr') {
+            <span class="font-bold text-indigo-400">FR</span> <span class="text-slate-500">/</span> <span class="text-slate-400 hover:text-slate-200">EN</span>
+          } @else {
+            <span class="text-slate-400 hover:text-slate-200">FR</span> <span class="text-slate-500">/</span> <span class="font-bold text-indigo-400">EN</span>
+          }
+        </button>
+
+        <!-- Theme Switcher (Clair / Sombre) -->
+        <button (click)="ps.toggleTheme()" class="p-2 rounded-lg bg-slate-800/80 border border-white/10 hover:border-indigo-500/50 transition-all cursor-pointer flex items-center justify-center" [title]="ps.currentTheme() === 'dark' ? (ps.currentLang() === 'fr' ? 'Activer le mode clair' : 'Switch to Light Mode') : (ps.currentLang() === 'fr' ? 'Activer le mode sombre' : 'Switch to Dark Mode')">
+          @if (ps.currentTheme() === 'dark') {
+            <app-icon name="sun" class="w-4 h-4 text-amber-400"></app-icon>
+          } @else {
+            <app-icon name="moon" class="w-4 h-4 text-indigo-600"></app-icon>
+          }
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button (click)="ps.toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+          <app-icon [name]="ps.isMobileMenuOpen() ? 'x' : 'menu'" class="w-5 h-5"></app-icon>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Collapsible Menu -->
+    @if (ps.isMobileMenuOpen()) {
+      <div class="md:hidden border-t border-white/10 glass-panel backdrop-blur-2xl px-4 pt-2 pb-6 space-y-2">
+        <a (click)="ps.closeMobileMenu()" href="#projects" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navProjects }}</a>
+        <a (click)="ps.closeMobileMenu()" href="#experience" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navExperience }}</a>
+        <a (click)="ps.closeMobileMenu()" href="#skills" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navSkills }}</a>
+        <a (click)="ps.closeMobileMenu()" href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navContact }}</a>
+        
+        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+          <button (click)="ps.toggleLanguage()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-xs font-mono font-bold text-indigo-400">
+            {{ ps.currentLang().toUpperCase() }}
+          </button>
+          <button (click)="ps.toggleTheme()" class="p-2 rounded-lg bg-slate-800 flex items-center justify-center">
+            @if (ps.currentTheme() === 'dark') {
+              <app-icon name="sun" class="w-4 h-4 text-amber-400"></app-icon>
+            } @else {
+              <app-icon name="moon" class="w-4 h-4 text-indigo-600"></app-icon>
+            }
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</header>
+
+<main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+  <!-- HERO SECTION -->
+  <section id="about" class="pt-6 md:pt-12">
+    <!-- Unified macOS Window Hero -->
+    <div class="glass-panel rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden relative">
+      <!-- Glow ambient background -->
+      <div class="absolute -top-24 -left-24 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- macOS Window Title Bar -->
+      <div class="px-5 py-3.5 bg-black/50 border-b border-white/10 flex items-center justify-between backdrop-blur-md relative z-10">
+        <!-- Traffic lights -->
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-sm inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]/40 shadow-sm inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]/40 shadow-sm inline-block"></span>
+        </div>
+
+        <!-- Window title in the center -->
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="text-indigo-400 font-semibold">mathieu@ricard</span>
+          <span class="text-slate-600">:</span>
+          <span class="text-cyan-300">~</span>
+          <span class="text-slate-600">$</span>
+          <span class="text-slate-300">dotnet-pro</span>
+        </div>
+
+        <!-- Right window info -->
+        <div class="flex items-center gap-2 text-[11px] font-mono text-slate-500">
+          <span class="hidden sm:inline">zsh • .NET 9.0</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        </div>
+      </div>
+
+      <!-- macOS Window Body -->
+      <div class="p-6 sm:p-10 lg:p-12 space-y-8 relative z-10">
+        
+        <!-- Top Status & Social Row -->
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>{{ ps.t().statusBadge }}</span>
+          </div>
+
+          <!-- Quick Socials & Location -->
+          <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400">
+            <span class="flex items-center gap-1.5 text-slate-300">
+              <app-icon name="map-pin" class="w-4 h-4 text-indigo-400"></app-icon> {{ ps.t().heroLocation }}
+            </span>
+            <span class="text-slate-700 hidden sm:inline">•</span>
+            <a href="https://www.linkedin.com/in/math-ricard/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 flex items-center gap-1.5 transition-colors">
+              <app-icon name="linkedin" class="w-4 h-4 text-blue-400"></app-icon> <span class="hidden sm:inline">LinkedIn</span>
+            </a>
+            <span class="text-slate-700 hidden sm:inline">•</span>
+            <a href="https://github.com/Matricard" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1.5 transition-colors">
+              <app-icon name="github" class="w-4 h-4 text-slate-300"></app-icon> <span class="hidden sm:inline">GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Main Hero Presentation (Headlines + Photo) -->
+        <div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 lg:gap-12">
+          <div class="space-y-4 flex-1 text-center md:text-left">
+            <!-- Headlines -->
+            <div class="space-y-3">
+              <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-indigo-400">
+                {{ ps.t().heroGreeting }}
+              </p>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Mathieu <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-300">Ricard</span>
+              </h1>
+              <h2 class="text-xl sm:text-2xl font-semibold text-slate-200">
+                {{ ps.t().heroRole }}
+              </h2>
+            </div>
+
+            <!-- Bio Description -->
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+              {{ ps.t().heroDesc }}
+            </p>
+          </div>
+
+          <!-- Profile Photo with modern glowing frame -->
+          <div class="relative shrink-0 group">
+            <div class="absolute -inset-1.5 bg-gradient-to-tr from-indigo-500 via-cyan-500 to-indigo-400 rounded-2xl sm:rounded-3xl blur-md opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-2xl sm:rounded-3xl overflow-hidden ring-2 ring-white/20 shadow-2xl bg-slate-900">
+              <img src="images/profile.jpg" alt="Mathieu Ricard" width="192" height="192" fetchpriority="high" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Quick Technologies Badges -->
+        <div class="pt-6 border-t border-white/5 space-y-3">
+          <span class="text-xs font-mono uppercase text-slate-500 tracking-wider">Technologies clés</span>
+          <div class="flex flex-wrap gap-2 text-xs font-medium">
+            <span class="px-3 py-1.5 rounded-lg bg-indigo-950/60 border border-indigo-500/30 text-indigo-300">C# / .NET Core</span>
+            <span class="px-3 py-1.5 rounded-lg bg-indigo-950/60 border border-indigo-500/30 text-indigo-300">ASP.NET Core</span>
+            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-cyan-300">Angular & Vue.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-500/30 text-purple-300">EF Core & SQL Server</span>
+            <span class="px-3 py-1.5 rounded-lg bg-rose-950/60 border border-rose-500/30 text-rose-300">macOS Native / WPF</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">CI/CD & Docker</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Key Metrics Row -->
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+      <div class="glass-panel p-5 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-extrabold text-white">{{ ps.t().statExp }}</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1">{{ ps.t().statExpLabel }}</div>
+      </div>
+      <div class="glass-panel p-5 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">{{ ps.t().statRoles }}</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1">{{ ps.t().statRolesLabel }}</div>
+      </div>
+      <div class="glass-panel p-5 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400">{{ ps.t().statStack }}</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1">{{ ps.t().statStackLabel }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION (CHERRYHUD SPOTLIGHT) -->
+  <section id="projects" class="scroll-mt-24 space-y-10">
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <span class="text-xs font-mono uppercase tracking-widest text-rose-400 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20">
+        {{ ps.t().projectsSectionBadge }}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        {{ ps.t().projectsSectionTitle }}
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        {{ ps.t().projectsSectionSubtitle }}
+      </p>
+    </div>
+
+    <!-- CherryHud Card -->
+    <div id="cherryhud" class="glass-cherry rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-rose-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs font-bold tracking-wider uppercase">
+              <app-icon name="sparkles" class="w-3.5 h-3.5 text-rose-400"></app-icon> {{ ps.t().chBadgeTag }}
+            </span>
+            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono">macOS 13+ • Apple Silicon & Metal</span>
+            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-xs font-mono">MIT Open Source</span>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="images/cherryhud/logo.png" alt="CherryHud Logo" width="48" height="48" decoding="async" class="w-12 h-12 rounded-xl shadow-lg ring-1 ring-white/10 object-cover" />
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">CherryHud</h2>
+            </div>
+            <p class="text-lg sm:text-xl font-medium text-rose-300">{{ ps.t().chTagline }}</p>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">{{ ps.t().chDesc }}</p>
+          </div>
+
+          <!-- 4 Core Features -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <div class="flex items-center gap-2 font-semibold text-white text-sm">
+                <app-icon name="activity" class="w-4 h-4 text-rose-400"></app-icon>
+                <span>{{ ps.t().chFeat1Title }}</span>
+              </div>
+              <p class="text-xs text-slate-400">{{ ps.t().chFeat1Desc }}</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <div class="flex items-center gap-2 font-semibold text-white text-sm">
+                <app-icon name="play-circle" class="w-4 h-4 text-rose-400"></app-icon>
+                <span>{{ ps.t().chFeat2Title }}</span>
+              </div>
+              <p class="text-xs text-slate-400">{{ ps.t().chFeat2Desc }}</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <div class="flex items-center gap-2 font-semibold text-white text-sm">
+                <app-icon name="cpu" class="w-4 h-4 text-rose-400"></app-icon>
+                <span>{{ ps.t().chFeat3Title }}</span>
+              </div>
+              <p class="text-xs text-slate-400">{{ ps.t().chFeat3Desc }}</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <div class="flex items-center gap-2 font-semibold text-white text-sm">
+                <app-icon name="move" class="w-4 h-4 text-rose-400"></app-icon>
+                <span>{{ ps.t().chFeat4Title }}</span>
+              </div>
+              <p class="text-xs text-slate-400">{{ ps.t().chFeat4Desc }}</p>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="https://cherryhud.com/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm flex items-center gap-2 shadow-lg shadow-rose-600/30 transition-all">
+              <app-icon name="external-link" class="w-4 h-4"></app-icon>
+              <span>{{ ps.t().chBtnVisitSite }}</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Preview Image -->
+        <div class="lg:col-span-5 flex items-center justify-center">
+          <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/15 group">
+            <img src="images/cherryhud/preview.jpg" alt="Aperçu CherryHud en jeu" loading="lazy" decoding="async" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION (TIMELINE) -->
+  <section id="experience" class="scroll-mt-24 space-y-10">
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <span class="text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+        {{ ps.t().expSectionBadge }}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        {{ ps.t().expSectionTitle }}
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        {{ ps.t().expSectionSubtitle }}
+      </p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative border-l-2 border-indigo-500/20 ml-4 sm:ml-8 md:ml-32 space-y-12">
+      
+      @for (exp of ps.experiences; track exp.company) {
+        <div class="relative pl-6 sm:pl-10 group">
+          
+          <!-- Marker -->
+          <div [class]="'absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ring-4 ring-[#0a0d14] group-hover:scale-125 transition-transform shadow-lg ' + exp.colorClass"></div>
+
+          <!-- Desktop Date -->
+          <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-indigo-400 mb-2 md:mb-0 md:text-right md:w-28 font-semibold">
+            {{ ps.currentLang() === 'fr' ? exp.dateBadgeFr : exp.dateBadgeEn }}
+          </div>
+
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4">
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-4">
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                  {{ ps.currentLang() === 'fr' ? exp.roleFr : exp.roleEn }}
+                </h3>
+                <div class="text-base font-semibold text-slate-300 flex items-center gap-2">
+                  <span>{{ exp.company }}</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono">
+                    {{ ps.currentLang() === 'fr' ? exp.badgeFr : exp.badgeEn }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
+                <app-icon name="calendar" class="w-3.5 h-3.5 text-indigo-400"></app-icon>
+                <span>{{ ps.currentLang() === 'fr' ? exp.periodFr : exp.periodEn }}</span>
+              </div>
+            </div>
+
+            <!-- Bullet Points -->
+            <ul class="space-y-2.5 text-sm sm:text-base text-slate-300">
+              @for (bullet of (ps.currentLang() === 'fr' ? exp.bulletsFr : exp.bulletsEn); track bullet) {
+                <li class="flex items-start gap-2.5">
+                  <span class="text-indigo-400 font-bold mt-1">▹</span>
+                  <span>{{ bullet }}</span>
+                </li>
+              }
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="pt-3 flex flex-wrap gap-2 text-xs font-mono">
+              @for (tech of exp.technologies; track tech) {
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ tech }}</span>
+              }
+            </div>
+
+          </div>
+
+        </div>
+      }
+
+      <!-- Education / Formation Milestone -->
+      <div class="relative pl-6 sm:pl-10 group">
+        
+        <!-- Marker -->
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ring-4 ring-[#0a0d14] group-hover:scale-125 transition-transform shadow-lg bg-emerald-500"></div>
+
+        <!-- Desktop Date -->
+        <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-emerald-400 mb-2 md:mb-0 md:text-right md:w-28 font-semibold">
+          {{ ps.t().eduDate }}
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4 border-emerald-500/20">
+          
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                  {{ ps.t().eduSectionBadge }}
+                </span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                <app-icon name="graduation-cap" class="w-5 h-5 text-emerald-400"></app-icon>
+                <span>{{ ps.t().eduDiploma }}</span>
+              </h3>
+              <div class="text-base font-semibold text-slate-300 mt-1">
+                {{ ps.t().eduSchool }}
+              </div>
+            </div>
+
+            <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
+              <app-icon name="calendar" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
+              <span>{{ ps.t().eduDate }}</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            {{ ps.t().eduDesc }}
+          </p>
+
+          <!-- Key Disciplines Badges -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Analyse & POO</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Bases de données</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Architecture logicielle</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Réseaux</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="scroll-mt-24 space-y-10">
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <span class="text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+        {{ ps.t().skillsSectionBadge }}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        {{ ps.t().skillsSectionTitle }}
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        {{ ps.t().skillsSectionSubtitle }}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      @for (group of ps.skillGroups; track group.id) {
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div [class]="'p-2.5 rounded-xl border ' + group.colorClass">
+              <app-icon [name]="group.icon" class="w-5 h-5"></app-icon>
+            </div>
+            <h3 class="text-lg font-bold text-white">
+              {{ ps.currentLang() === 'fr' ? group.titleFr : group.titleEn }}
+            </h3>
+          </div>
+
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            @for (skill of group.skills; track skill.name) {
+              <span [class]="skill.isHighlight ? 'px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-semibold' : 'px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-200'">
+                {{ skill.name }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Language Proficiency Card within Skills -->
+    <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 rounded-xl border text-cyan-400 bg-cyan-500/10 border-cyan-500/20">
+          <app-icon name="sparkles" class="w-5 h-5"></app-icon>
+        </div>
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-cyan-400">
+            {{ ps.t().langSectionBadge }}
+          </span>
+          <h3 class="text-lg font-bold text-white">
+            {{ ps.currentLang() === 'fr' ? 'Langues & Communication' : 'Languages & Communication' }}
+          </h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5 space-y-2">
+          <div class="flex items-center justify-between text-sm font-semibold text-white">
+            <span class="flex items-center gap-2">
+              <span class="text-lg">🇨🇦</span> Français
+            </span>
+            <span class="text-xs font-mono text-emerald-400">{{ ps.t().langFrLevel }}</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full w-full"></div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5 space-y-2">
+          <div class="flex items-center justify-between text-sm font-semibold text-white">
+            <span class="flex items-center gap-2">
+              <span class="text-lg">🌐</span> English
+            </span>
+            <span class="text-xs font-mono text-indigo-400">{{ ps.t().langEnLevel }}</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full w-[80%]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="scroll-mt-24">
+    <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl border-indigo-500/30">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Contact Info -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+            {{ ps.t().contactSectionBadge }}
+          </span>
+
+          <div class="space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              {{ ps.t().contactSectionTitle }}
+            </h2>
+            <p class="text-slate-300 text-base leading-relaxed">
+              {{ ps.t().contactSectionSubtitle }}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/math-ricard/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-slate-900/60 border border-white/10 hover:border-blue-500/50 group transition-all flex flex-col justify-between space-y-3">
+              <div class="p-2.5 rounded-lg bg-[#0077b5]/20 text-blue-400 w-fit">
+                <app-icon name="linkedin" class="w-5 h-5"></app-icon>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">{{ ps.t().contactLinkedInLabel }}</div>
+                <div class="text-xs font-semibold text-white group-hover:text-blue-300 transition-colors truncate">
+                  {{ ps.t().contactLinkedInDesc }}
+                </div>
+              </div>
+            </a>
+
+            <!-- Location Card -->
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between space-y-3">
+              <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 w-fit">
+                <app-icon name="map-pin" class="w-5 h-5"></app-icon>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">{{ ps.t().contactLocationLabel }}</div>
+                <div class="text-xs font-semibold text-white truncate">
+                  {{ ps.t().contactLocationDesc }}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Quick Contact CTA -->
+        <div class="lg:col-span-5 bg-black/40 rounded-2xl p-8 border border-white/10 flex flex-col items-center text-center space-y-5">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-cyan-500 rounded-2xl blur-sm opacity-50 group-hover:opacity-80 transition duration-300"></div>
+            <img src="images/profile.jpg" alt="Mathieu Ricard" width="80" height="80" class="relative w-20 h-20 rounded-2xl object-cover ring-2 ring-white/20 shadow-xl" />
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-bold text-white">Mathieu Ricard</h3>
+            <p class="text-sm text-slate-400">Développeur Full-Stack .NET & Concepteur Logiciel</p>
+          </div>
+          <div class="w-full space-y-2.5">
+            <a [href]="'mailto:' + ps.email" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2.5 transition-all cursor-pointer">
+              <app-icon name="mail" class="w-4 h-4"></app-icon>
+              <span>{{ ps.t().btnDirectContact }}</span>
+            </a>
+            <button (click)="ps.copyEmail()" type="button" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-mono flex items-center justify-center gap-2 transition-all cursor-pointer">
+              <app-icon [name]="ps.isEmailCopied() ? 'check-circle' : 'copy'" class="w-3.5 h-3.5" [class.text-emerald-400]="ps.isEmailCopied()" [class.text-indigo-400]="!ps.isEmailCopied()"></app-icon>
+              <span>{{ ps.isEmailCopied() ? ps.t().copiedText : ps.email }}</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-20 mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-transparent">
+  <div class="glass-panel rounded-2xl shadow-2xl backdrop-blur-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 rounded-md bg-indigo-600 flex items-center justify-center font-bold text-white text-[10px]">MR</div>
+      <span>© {{ currentYear }} Mathieu Ricard. {{ ps.t().footerRights }}</span>
+    </div>
+
+    <div class="text-center sm:text-right">
+      {{ ps.t().footerCrafted }}
+    </div>
+
+    <div class="font-mono text-xs text-slate-400 font-medium px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+      v0.0.1
+    </div>
+  </div>
+</footer>
