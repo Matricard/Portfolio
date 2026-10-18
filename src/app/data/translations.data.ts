@@ -28,6 +28,8 @@ export const TRANSLATIONS = {
     statRolesLabel: "SaaS, industriel & assurance qualité",
     statStack: ".NET & C#",
     statStackLabel: "ASP.NET Core, EF Core, Microservices",
+    statLang: "Bilingue",
+    statLangLabel: "Français natif • Anglais pro",
     statProduct: "CherryHud",
     statProductLabel: "Application macOS Open Source (MIT)",
 
@@ -118,6 +120,8 @@ export const TRANSLATIONS = {
     statRolesLabel: "SaaS, industrial & QA environments",
     statStack: ".NET & C#",
     statStackLabel: "ASP.NET Core, EF Core, Microservices",
+    statLang: "Bilingual",
+    statLangLabel: "Native French • Prof. English",
     statProduct: "CherryHud",
     statProductLabel: "Open Source macOS App (MIT)",
 
