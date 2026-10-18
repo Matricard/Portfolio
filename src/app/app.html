@@ -3,7 +3,7 @@
 
 <!-- Header / Navigation Bar -->
 <header class="sticky top-4 z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-200">
-  <div class="glass-panel rounded-2xl shadow-2xl backdrop-blur-2xl transition-all duration-200 overflow-hidden">
+  <div class="glass-panel rounded-2xl shadow-2xl transition-all duration-200 overflow-hidden">
     <div class="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand with Profile Photo -->
@@ -50,7 +50,7 @@
 
     <!-- Mobile Collapsible Menu -->
     @if (ps.isMobileMenuOpen()) {
-      <div class="md:hidden border-t border-white/10 glass-panel backdrop-blur-2xl px-4 pt-2 pb-6 space-y-2">
+      <div class="md:hidden border-t border-white/10 glass-panel px-4 pt-2 pb-6 space-y-2">
         <a (click)="ps.closeMobileMenu()" href="#projects" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navProjects }}</a>
         <a (click)="ps.closeMobileMenu()" href="#experience" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navExperience }}</a>
         <a (click)="ps.closeMobileMenu()" href="#skills" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-white/5">{{ ps.t().navSkills }}</a>
@@ -84,7 +84,7 @@
       <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- macOS Window Title Bar -->
-      <div class="px-5 py-3.5 bg-black/50 border-b border-white/10 flex items-center justify-between backdrop-blur-md relative z-10">
+      <div class="px-5 py-3.5 bg-black/50 border-b border-white/10 flex items-center justify-between backdrop-blur-sm relative z-10">
         <!-- Traffic lights -->
         <div class="flex items-center gap-2">
           <span class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-sm inline-block"></span>
@@ -586,7 +586,7 @@
 
 <!-- FOOTER -->
 <footer class="mt-20 mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-transparent">
-  <div class="glass-panel rounded-2xl shadow-2xl backdrop-blur-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+  <div class="glass-panel rounded-2xl shadow-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
     <div class="flex items-center gap-2">
       <div class="w-6 h-6 rounded-md bg-indigo-600 flex items-center justify-center font-bold text-white text-[10px]">MR</div>
       <span>© {{ currentYear }} Mathieu Ricard. {{ ps.t().footerRights }}</span>
