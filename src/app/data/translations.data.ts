@@ -29,7 +29,7 @@ export const TRANSLATIONS = {
     statStack: ".NET & C#",
     statStackLabel: "ASP.NET Core, EF Core, Microservices",
     statLang: "Bilingue",
-    statLangLabel: "Français natif • Anglais pro",
+    statLangLabel: "Français natif • Anglais fonctionnel",
     statProduct: "CherryHud",
     statProductLabel: "Application macOS Open Source (MIT)",
 
@@ -121,7 +121,7 @@ export const TRANSLATIONS = {
     statStack: ".NET & C#",
     statStackLabel: "ASP.NET Core, EF Core, Microservices",
     statLang: "Bilingual",
-    statLangLabel: "Native French • Prof. English",
+    statLangLabel: "Native French • Functional English",
     statProduct: "CherryHud",
     statProductLabel: "Open Source macOS App (MIT)",
 
