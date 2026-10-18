@@ -4,8 +4,8 @@
   :root {
     --bg-primary: #0a0d14;
     --bg-secondary: #0f1523;
-    --bg-card: rgba(18, 24, 38, 0.7);
-    --bg-card-hover: rgba(26, 34, 52, 0.85);
+    --bg-card: rgba(18, 24, 38, 0.62);
+    --bg-card-hover: rgba(26, 34, 52, 0.78);
     --border-color: rgba(255, 255, 255, 0.08);
     --border-color-hover: rgba(99, 102, 241, 0.35);
     --text-primary: #f8fafc;
@@ -44,10 +44,13 @@
   }
 }
 
+/* ==========================================================================
+   DARK THEME: CRYSTAL GLASS ULTRA-LIGHT BLUR (2.5px) FOR ALL ELEMENTS
+   ========================================================================== */
 .glass-panel {
   background-color: var(--bg-card);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
   border: 1px solid var(--border-color);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -58,15 +61,55 @@
 }
 
 .glass-cherry {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(18, 24, 38, 0.8) 100%);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(18, 24, 38, 0.72) 100%);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
   border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .glass-cherry:hover {
   border-color: rgba(239, 68, 68, 0.5);
   box-shadow: 0 0 35px var(--glow-cherry);
+}
+
+/* Inner containers & cards in dark mode */
+.bg-black\/50,
+.bg-black\/40,
+.bg-black\/30 {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
+.bg-slate-900\/60,
+.bg-slate-900\/80,
+.bg-slate-900 {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
+.bg-white\/5,
+.bg-white\/10 {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
+/* Badges & Chips in dark mode */
+.bg-indigo-950\/60,
+.bg-cyan-950\/60,
+.bg-purple-950\/60,
+.bg-rose-950\/60,
+.bg-emerald-950\/60,
+.bg-indigo-500\/10,
+.bg-indigo-500\/15 {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
+/* Buttons in dark mode */
+button.bg-slate-800,
+button.bg-slate-800\/80 {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
 }
 
 .ambient-glow {
