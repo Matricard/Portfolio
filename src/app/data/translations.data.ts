@@ -65,7 +65,7 @@ export const TRANSLATIONS = {
     eduDiploma: "DEC technique en informatique",
     eduSchool: "Collège de Maisonneuve, Montréal",
     eduDate: "Diplômé en Juin 2021",
-    eduDuration: "3 ans",
+    eduDateBadge: "Juin 2021",
     eduDesc: "Formation technique approfondie axée sur l'analyse, la programmation orientée objet, les bases de données relationnelles, les réseaux et l'architecture logicielle.",
     langSectionBadge: "PROFIL LINGUISTIQUE",
     langFrLevel: "Langue maternelle (Natif)",
@@ -88,7 +88,7 @@ export const TRANSLATIONS = {
 
     // Footer
     footerRights: "Tous droits réservés.",
-    footerCrafted: "Développé avec Angular & Tailwind CSS • Mathieu Ricard",
+    footerCrafted: "Développé avec Angular & Tailwind CSS",
   },
 
   en: {
@@ -155,8 +155,8 @@ export const TRANSLATIONS = {
     eduDiploma: "Technical College Degree (DEC) in Computer Science",
     eduSchool: "Collège de Maisonneuve, Montreal",
     eduDate: "Graduated June 2021",
-    eduDuration: "3 years",
-    eduDesc: "Rigorous 3-year technical program covering object-oriented design, relational databases, distributed networking, and software architecture.",
+    eduDateBadge: "June 2021",
+    eduDesc: "Rigorous technical program covering object-oriented design, relational databases, distributed networking, and software architecture.",
     langSectionBadge: "LANGUAGE PROFICIENCY",
     langFrLevel: "Native Language",
     langEnLevel: "Functional (Technical & Professional)",
@@ -178,7 +178,7 @@ export const TRANSLATIONS = {
 
     // Footer
     footerRights: "All rights reserved.",
-    footerCrafted: "Built with Angular & Tailwind CSS • Mathieu Ricard",
+    footerCrafted: "Built with Angular & Tailwind CSS",
   }
 };
 
@@ -190,7 +190,7 @@ export const EXPERIENCES: JobExperience[] = [
     periodFr: "Septembre 2024 – Mai 2026",
     periodEn: "September 2024 – May 2026",
     durationFr: "1 an et 9 mois",
-    durationEn: "1 yr 9 mos",
+    durationEn: "1 year 9 months",
     badgeFr: "SaaS Automobile & Assurance",
     badgeEn: "Automotive & Insurance SaaS",
     dateBadgeFr: "Sept 2024 – Mai 2026",
@@ -216,7 +216,7 @@ export const EXPERIENCES: JobExperience[] = [
     periodFr: "Avril 2023 – Novembre 2023",
     periodEn: "April 2023 – November 2023",
     durationFr: "8 mois",
-    durationEn: "8 mos",
+    durationEn: "8 months",
     badgeFr: "Automatisation industrielle",
     badgeEn: "Industrial Automation",
     dateBadgeFr: "Avr 2023 – Nov 2023",
@@ -242,7 +242,7 @@ export const EXPERIENCES: JobExperience[] = [
     periodFr: "Juin 2021 – Février 2023",
     periodEn: "June 2021 – February 2023",
     durationFr: "1 an et 9 mois",
-    durationEn: "1 yr 9 mos",
+    durationEn: "1 year 9 months",
     badgeFr: "Systèmes ERP / WMS / MES",
     badgeEn: "Industrial ERP / WMS / MES",
     dateBadgeFr: "Juin 2021 – Fév 2023",
@@ -268,7 +268,7 @@ export const EXPERIENCES: JobExperience[] = [
     periodFr: "Mars 2019 – Août 2019",
     periodEn: "March 2019 – August 2019",
     durationFr: "6 mois",
-    durationEn: "6 mos",
+    durationEn: "6 months",
     badgeFr: "Sécurité & Surveillance",
     badgeEn: "Security & Monitoring",
     dateBadgeFr: "Mars 2019 – Août 2019",
