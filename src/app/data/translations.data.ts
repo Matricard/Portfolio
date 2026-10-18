@@ -61,7 +61,7 @@ export const TRANSLATIONS = {
     skillsSectionSubtitle: "Maîtrise approfondie de l'écosystème Microsoft, du développement moderne et des méthodologies agiles.",
 
     // Education & Languages
-    eduSectionBadge: "DIPLÔMES & LANGUES",
+    eduSectionBadge: "FORMATION & DIPLÔME",
     eduDiploma: "DEC technique en informatique",
     eduSchool: "Collège de Maisonneuve, Montréal",
     eduDate: "Diplômé en Juin 2021",
@@ -148,7 +148,7 @@ export const TRANSLATIONS = {
     skillsSectionSubtitle: "In-depth mastery of the Microsoft ecosystem, modern web technologies, and clean software engineering.",
 
     // Education & Languages
-    eduSectionBadge: "EDUCATION & LANGUAGES",
+    eduSectionBadge: "EDUCATION & DEGREE",
     eduDiploma: "Technical College Degree (DEC) in Computer Science",
     eduSchool: "Collège de Maisonneuve, Montreal",
     eduDate: "Graduated June 2021",

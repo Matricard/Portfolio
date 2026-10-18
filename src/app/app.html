@@ -2,26 +2,29 @@
 <app-cosmic-background></app-cosmic-background>
 
 <!-- Header / Navigation Bar -->
-<header class="sticky top-4 z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-200">
-  <div class="glass-panel rounded-2xl shadow-2xl transition-all duration-200 overflow-hidden">
-    <div class="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<header class="sticky top-4 z-40 max-w-5xl mx-auto px-4 sm:px-6 transition-all duration-200">
+  <div class="glass-panel rounded-2xl shadow-xl transition-all duration-200 overflow-hidden">
+    <div class="px-4 sm:px-6 h-14 flex items-center justify-between">
       
       <!-- Brand with Profile Photo -->
-      <a href="#about" class="flex items-center gap-3 group">
-        <img src="images/profile.jpg" alt="Mathieu Ricard" width="36" height="36" class="w-9 h-9 rounded-xl object-cover ring-1 ring-white/20 group-hover:ring-indigo-400 transition-all shadow-md" />
+      <a href="#about" class="flex items-center gap-2.5 group shrink-0">
+        <img src="images/profile.jpg" alt="Mathieu Ricard" width="34" height="34" class="w-8.5 h-8.5 rounded-xl object-cover ring-1 ring-white/20 group-hover:ring-indigo-400 transition-all shadow-sm" />
         <span class="font-bold text-sm text-white tracking-tight hidden sm:inline group-hover:text-indigo-300 transition-colors">Mathieu Ricard</span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-        <a href="#projects" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navProjects }}</a>
-        <a href="#experience" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navExperience }}</a>
-        <a href="#skills" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navSkills }}</a>
-        <a href="#contact" class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">{{ ps.t().navContact }}</a>
-      </nav>
+      <!-- Desktop Navigation & Actions Grouped on Right -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#projects" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all">{{ ps.t().navProjects }}</a>
+          <a href="#experience" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all">{{ ps.t().navExperience }}</a>
+          <a href="#skills" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all">{{ ps.t().navSkills }}</a>
+          <a href="#contact" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all">{{ ps.t().navContact }}</a>
+        </nav>
 
-      <!-- Actions & Switches -->
-      <div class="flex items-center gap-3 ml-auto md:ml-0">
+        <!-- Subtle vertical separator -->
+        <div class="hidden md:block w-px h-5 bg-slate-300/60 dark:bg-white/15 mx-1"></div>
+
         <!-- Language Switcher -->
         <button (click)="ps.toggleLanguage()" class="px-2.5 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 hover:border-indigo-500/50 text-xs font-mono transition-all flex items-center gap-1 cursor-pointer" title="Changer de langue / Switch language">
           @if (ps.currentLang() === 'fr') {
@@ -313,6 +316,61 @@
     <div class="relative border-l-2 border-indigo-500/20 ml-4 sm:ml-8 md:ml-32 space-y-12">
       
       @for (exp of ps.experiences; track exp.company) {
+        
+        @if (exp.company === 'MCDI Security Products Inc.') {
+          <!-- Education / Formation Milestone (Juin 2021 - chronologiquement entre Epsilia 2021-2023 et MCDI 2019) -->
+          <div class="relative pl-6 sm:pl-10 group">
+            
+            <!-- Marker -->
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ring-4 ring-[#0a0d14] group-hover:scale-125 transition-transform shadow-lg bg-emerald-500"></div>
+
+            <!-- Desktop Date -->
+            <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-emerald-400 mb-2 md:mb-0 md:text-right md:w-28 font-semibold">
+              {{ ps.t().eduDate }}
+            </div>
+
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4 border-emerald-500/20">
+              
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-4">
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                      {{ ps.t().eduSectionBadge }}
+                    </span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                    <app-icon name="graduation-cap" class="w-5 h-5 text-emerald-400"></app-icon>
+                    <span>{{ ps.t().eduDiploma }}</span>
+                  </h3>
+                  <div class="text-base font-semibold text-slate-300 mt-1">
+                    {{ ps.t().eduSchool }}
+                  </div>
+                </div>
+
+                <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
+                  <app-icon name="calendar" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
+                  <span>{{ ps.t().eduDate }}</span>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                {{ ps.t().eduDesc }}
+              </p>
+
+              <!-- Key Disciplines Badges -->
+              <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Analyse & POO' : 'Analysis & OOP' }}</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Bases de données' : 'Databases & SQL' }}</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Architecture logicielle' : 'Software Architecture' }}</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Réseaux & Systèmes' : 'Networking & Systems' }}</span>
+              </div>
+
+            </div>
+
+          </div>
+        }
+
         <div class="relative pl-6 sm:pl-10 group">
           
           <!-- Marker -->
@@ -365,58 +423,6 @@
 
         </div>
       }
-
-      <!-- Education / Formation Milestone -->
-      <div class="relative pl-6 sm:pl-10 group">
-        
-        <!-- Marker -->
-        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ring-4 ring-[#0a0d14] group-hover:scale-125 transition-transform shadow-lg bg-emerald-500"></div>
-
-        <!-- Desktop Date -->
-        <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-emerald-400 mb-2 md:mb-0 md:text-right md:w-28 font-semibold">
-          {{ ps.t().eduDate }}
-        </div>
-
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4 border-emerald-500/20">
-          
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-4">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                  {{ ps.t().eduSectionBadge }}
-                </span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
-                <app-icon name="graduation-cap" class="w-5 h-5 text-emerald-400"></app-icon>
-                <span>{{ ps.t().eduDiploma }}</span>
-              </h3>
-              <div class="text-base font-semibold text-slate-300 mt-1">
-                {{ ps.t().eduSchool }}
-              </div>
-            </div>
-
-            <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
-              <app-icon name="calendar" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
-              <span>{{ ps.t().eduDate }}</span>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-            {{ ps.t().eduDesc }}
-          </p>
-
-          <!-- Key Disciplines Badges -->
-          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Analyse & POO</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Bases de données</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Architecture logicielle</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">Réseaux</span>
-          </div>
-
-        </div>
-
-      </div>
 
     </div>
   </section>
