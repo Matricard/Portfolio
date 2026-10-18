@@ -566,16 +566,13 @@
 
         <!-- Unified Compact Links & Actions Group -->
         <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <!-- Direct Email Button -->
-          <a [href]="'mailto:' + ps.email" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-indigo-600/25 flex items-center gap-2 transition-all cursor-pointer">
-            <app-icon name="mail" class="w-4 h-4"></app-icon>
-            <span>{{ ps.t().btnDirectContact }}</span>
-          </a>
-
-          <!-- Copy Email Button -->
-          <button (click)="ps.copyEmail()" type="button" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 hover:text-white text-xs font-mono flex items-center gap-2 transition-all cursor-pointer" [title]="ps.isEmailCopied() ? ps.t().copiedText : 'Copier l\'adresse courriel'">
-            <app-icon [name]="ps.isEmailCopied() ? 'check-circle' : 'copy'" class="w-3.5 h-3.5" [class.text-emerald-400]="ps.isEmailCopied()" [class.text-indigo-400]="!ps.isEmailCopied()"></app-icon>
-            <span>{{ ps.isEmailCopied() ? ps.t().copiedText : ps.email }}</span>
+          <!-- Email Direct Copy Button (Option 1: Primary Action with visible email & instant copy) -->
+          <button (click)="ps.copyEmail()" 
+                  type="button" 
+                  class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-indigo-600/25 flex items-center gap-2.5 transition-all cursor-pointer group" 
+                  [title]="ps.isEmailCopied() ? ps.t().copiedText : (ps.currentLang() === 'fr' ? 'Cliquer pour copier l\'adresse courriel' : 'Click to copy email address')">
+            <app-icon [name]="ps.isEmailCopied() ? 'check-circle' : 'copy'" class="w-4 h-4 transition-transform group-hover:scale-110" [class.text-emerald-300]="ps.isEmailCopied()" [class.text-indigo-200]="!ps.isEmailCopied()"></app-icon>
+            <span class="font-mono tracking-tight">{{ ps.isEmailCopied() ? ps.t().copiedText : ps.email }}</span>
           </button>
 
           <!-- LinkedIn Link -->
@@ -602,22 +599,14 @@
 <footer class="mt-20 mb-8 max-w-5xl mx-auto px-4 sm:px-6 relative z-10 bg-transparent">
   <div class="glass-panel rounded-2xl shadow-xl transition-all duration-200 overflow-hidden">
     <div class="px-4 sm:px-6 h-14 flex items-center justify-between text-xs sm:text-sm text-slate-400">
-      <div class="flex items-center gap-2.5">
-        <a href="#about" (click)="ps.setActiveSection('about')" class="w-7 h-7 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition-colors flex items-center justify-center font-bold text-white text-xs shadow-sm cursor-pointer" title="Mathieu Ricard">MR</a>
+      <div class="flex items-center gap-2">
         <span class="font-medium text-slate-300">© {{ currentYear }} Mathieu Ricard</span>
         <span class="hidden sm:inline text-slate-500">•</span>
         <span class="hidden sm:inline text-slate-400 text-xs">{{ ps.t().footerRights }}</span>
       </div>
 
-      <div class="flex items-center gap-3">
-        <span class="hidden md:inline text-xs text-slate-400">{{ ps.t().footerCrafted }}</span>
-        <a href="#about" 
-           (click)="ps.setActiveSection('about')" 
-           class="px-2.5 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 hover:border-indigo-500/50 text-slate-300 hover:text-white transition-all flex items-center gap-1.5 cursor-pointer text-xs font-medium" 
-           [title]="ps.currentLang() === 'fr' ? 'Retour en haut de page' : 'Back to top'">
-          <span>{{ ps.currentLang() === 'fr' ? 'Haut' : 'Top' }}</span>
-          <span class="text-indigo-400 font-bold">↑</span>
-        </a>
+      <div class="text-xs text-slate-400 text-right">
+        {{ ps.t().footerCrafted }}
       </div>
     </div>
   </div>
