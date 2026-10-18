@@ -7,6 +7,8 @@ export interface JobExperience {
   roleEn: string;
   periodFr: string;
   periodEn: string;
+  durationFr?: string;
+  durationEn?: string;
   badgeFr: string;
   badgeEn: string;
   dateBadgeFr: string;

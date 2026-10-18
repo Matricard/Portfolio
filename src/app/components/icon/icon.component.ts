@@ -78,6 +78,11 @@ import { CommonModule } from '@angular/common';
         <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
       </svg>
 
+      <!-- Clock -->
+      <svg *ngSwitchCase="'clock'" class="w-full h-full" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+
       <!-- Code -->
       <svg *ngSwitchCase="'code'" class="w-full h-full" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>

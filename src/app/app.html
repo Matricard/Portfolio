@@ -108,7 +108,7 @@
 <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
 
   <!-- HERO SECTION -->
-  <section id="about" class="pt-6 md:pt-12">
+  <section id="about" class="pt-6 md:pt-12 scroll-mt-24">
     <!-- Unified macOS Window Hero -->
     <div class="glass-panel rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden relative">
       <!-- Glow ambient background -->
@@ -116,7 +116,7 @@
       <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- macOS Window Title Bar -->
-      <div class="px-5 py-3.5 bg-black/50 border-b border-white/10 flex items-center justify-between relative z-10">
+      <div class="px-5 py-3.5 bg-black/50 border-b border-white/10 flex items-center justify-between relative z-10 hero-content-layer">
         <!-- Traffic lights -->
         <div class="flex items-center gap-2">
           <span class="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-sm inline-block"></span>
@@ -141,7 +141,7 @@
       </div>
 
       <!-- macOS Window Body -->
-      <div class="p-6 sm:p-10 lg:p-12 space-y-8 relative z-10">
+      <div class="p-6 sm:p-10 lg:p-12 space-y-8 relative z-10 hero-content-layer">
         
         <!-- Top Status Row -->
         <div class="flex items-center">
@@ -154,7 +154,7 @@
 
         <!-- Main Hero Presentation (Headlines + Photo with Location) -->
         <div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 lg:gap-12">
-          <div class="space-y-4 flex-1 text-center md:text-left">
+          <div class="space-y-4 flex-1 text-center md:text-left hero-content-layer">
             <!-- Headlines -->
             <div class="space-y-3">
               <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-indigo-400">
@@ -376,9 +376,9 @@
                   </div>
                 </div>
 
-                <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
-                  <app-icon name="calendar" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
-                  <span>{{ ps.t().eduDate }}</span>
+                <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                  <app-icon name="clock" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
+                  <span>{{ ps.t().eduDuration }}</span>
                 </div>
               </div>
 
@@ -427,9 +427,9 @@
                 </div>
               </div>
 
-              <div class="text-xs font-mono text-slate-400 flex items-center gap-1">
-                <app-icon name="calendar" class="w-3.5 h-3.5 text-indigo-400"></app-icon>
-                <span>{{ ps.currentLang() === 'fr' ? exp.periodFr : exp.periodEn }}</span>
+              <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                <app-icon name="clock" class="w-3.5 h-3.5 text-indigo-400"></app-icon>
+                <span>{{ ps.currentLang() === 'fr' ? exp.durationFr : exp.durationEn }}</span>
               </div>
             </div>
 
