@@ -489,41 +489,84 @@ export class CosmicBackgroundComponent implements AfterViewInit, OnDestroy {
 
     // Stylized Tree Branches (Left side)
     ctx.save();
-    ctx.strokeStyle = 'rgba(120, 53, 15, 0.18)'; // Warm cedar/bark brown
+    ctx.strokeStyle = 'rgba(120, 53, 15, 0.2)'; // Warm cedar/bark brown
     ctx.lineCap = 'round';
 
-    // Main left trunk rising upwards
+    // Main left trunk rising upwards along the edge
+    const lx0 = -25;
+    const ly0 = height * 0.72;
+    const lcx = Math.max(width * 0.045, 28);
+    const lcy = height * 0.44;
+    const lx1 = Math.max(width * 0.015, 12);
+    const ly1 = height * 0.16;
+
+    const getLeftTrunkPoint = (t: number) => {
+      const mt = 1 - t;
+      return {
+        x: mt * mt * lx0 + 2 * mt * t * lcx + t * t * lx1,
+        y: mt * mt * ly0 + 2 * mt * t * lcy + t * t * ly1
+      };
+    };
+
+    // Draw trunk
     ctx.lineWidth = 14;
     ctx.beginPath();
-    ctx.moveTo(-30, height * 0.7);
-    ctx.quadraticCurveTo(width * 0.05, height * 0.45, width * 0.02, height * 0.2);
+    ctx.moveTo(lx0, ly0);
+    ctx.quadraticCurveTo(lcx, lcy, lx1, ly1);
     ctx.stroke();
 
-    // Left branch 1
+    // Lower branch 1: Rooted directly on the trunk
+    const lp1 = getLeftTrunkPoint(0.40);
     ctx.lineWidth = 7;
     ctx.beginPath();
-    ctx.moveTo(width * 0.035, height * 0.48);
-    ctx.quadraticCurveTo(width * 0.09, height * 0.38, width * 0.11, height * 0.32);
+    ctx.moveTo(lp1.x, lp1.y);
+    ctx.quadraticCurveTo(
+      lp1.x + Math.max(width * 0.055, 45), lp1.y - height * 0.07,
+      lp1.x + Math.max(width * 0.095, 75), lp1.y - height * 0.13
+    );
     ctx.stroke();
 
-    // Left branch 2
+    // Upper branch 2: Rooted directly on the trunk higher up
+    const lp2 = getLeftTrunkPoint(0.66);
     ctx.lineWidth = 5;
     ctx.beginPath();
-    ctx.moveTo(width * 0.025, height * 0.3);
-    ctx.quadraticCurveTo(width * 0.07, height * 0.22, width * 0.08, height * 0.16);
+    ctx.moveTo(lp2.x, lp2.y);
+    ctx.quadraticCurveTo(
+      lp2.x + Math.max(width * 0.045, 35), lp2.y - height * 0.06,
+      lp2.x + Math.max(width * 0.075, 55), lp2.y - height * 0.11
+    );
     ctx.stroke();
 
-    // Stylized Tree Branches (Right top corner)
+    // Stylized Tree Branches (Right top corner canopy)
+    const rx0 = width + 25;
+    const ry0 = height * 0.04;
+    const rcx = width - Math.max(width * 0.05, 35);
+    const rcy = height * 0.14;
+    const rx1 = width - Math.max(width * 0.11, 70);
+    const ry1 = height * 0.19;
+
+    const getRightTrunkPoint = (t: number) => {
+      const mt = 1 - t;
+      return {
+        x: mt * mt * rx0 + 2 * mt * t * rcx + t * t * rx1,
+        y: mt * mt * ry0 + 2 * mt * t * rcy + t * t * ry1
+      };
+    };
+
     ctx.lineWidth = 10;
     ctx.beginPath();
-    ctx.moveTo(width + 30, height * 0.05);
-    ctx.quadraticCurveTo(width * 0.94, height * 0.14, width * 0.88, height * 0.18);
+    ctx.moveTo(rx0, ry0);
+    ctx.quadraticCurveTo(rcx, rcy, rx1, ry1);
     ctx.stroke();
 
+    const rp1 = getRightTrunkPoint(0.55);
     ctx.lineWidth = 5;
     ctx.beginPath();
-    ctx.moveTo(width * 0.92, height * 0.15);
-    ctx.quadraticCurveTo(width * 0.87, height * 0.24, width * 0.84, height * 0.28);
+    ctx.moveTo(rp1.x, rp1.y);
+    ctx.quadraticCurveTo(
+      rp1.x - Math.max(width * 0.04, 25), rp1.y + height * 0.06,
+      rp1.x - Math.max(width * 0.07, 45), rp1.y + height * 0.10
+    );
     ctx.stroke();
 
     ctx.restore();

@@ -45,12 +45,12 @@
 }
 
 /* ==========================================================================
-   DARK THEME: CRYSTAL GLASS ULTRA-LIGHT BLUR (2.5px) FOR ALL ELEMENTS
+   DARK THEME: CRYSTAL GLASS SUBTLE BLUR (1px) FOR ALL ELEMENTS
    ========================================================================== */
 .glass-panel {
   background-color: var(--bg-card);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border: 1px solid var(--border-color);
   transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   isolation: isolate;
@@ -67,8 +67,8 @@
 
 .glass-cherry {
   background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(18, 24, 38, 0.72) 100%);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(239, 68, 68, 0.25);
   isolation: isolate;
   transform: translate3d(0, 0, 0);
@@ -105,8 +105,20 @@
 
 button.bg-slate-800,
 button.bg-slate-800\/80 {
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+/* Header Navbar Blur (Frosted blur matching light mode: 5px) */
+header .glass-panel {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+header button.bg-slate-800,
+header button.bg-slate-800\/80 {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 /* Active Nav Indicator (Dark Mode) */
@@ -242,8 +254,15 @@ html.light h6 {
 }
 
 /* Non-button text-white becomes dark slate */
-html.light .text-white:not(button):not(button *):not(a.bg-rose-600):not(a.bg-rose-600 *):not(a.bg-gradient-to-r):not(a.bg-gradient-to-r *):not(.bg-indigo-600 *):not(.bg-rose-600 *) {
+html.light .text-white:not(button):not(button *):not(a.bg-rose-600):not(a.bg-rose-600 *):not(a.bg-gradient-to-r):not(a.bg-gradient-to-r *):not(.bg-indigo-600 *):not(.bg-rose-600 *),
+html.light button.glass-panel,
+html.light button.glass-panel .text-white {
   color: #0f172a !important;
+}
+
+html.light button.glass-panel:hover .text-white,
+html.light button.glass-panel:hover .text-slate-900 {
+  color: #4f46e5 !important;
 }
 
 html.light .text-slate-100 {
@@ -345,9 +364,6 @@ header button.w-8 {
   width: 2rem !important;
   height: 2rem !important;
   padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 }
 
 header button.w-8 app-icon {
@@ -355,6 +371,13 @@ header button.w-8 app-icon {
   align-items: center !important;
   justify-content: center !important;
   margin: auto !important;
+}
+
+@media (min-width: 768px) {
+  .md\:hidden,
+  header .md\:hidden {
+    display: none !important;
+  }
 }
 
 /* Mobile Dropdown Menu */
