@@ -347,8 +347,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Angular", isHighlight: true },
       { name: "Flutter", isHighlight: true },
       { name: "Kotlin" },
-      { name: "Swift" },
-      { name: "Tailwind CSS" }
+      { name: "Swift" }
     ]
   },
   {
