@@ -151,6 +151,71 @@ export class PortfolioService {
   readonly email = 'mat.ricard3@outlook.com';
   readonly isEmailCopied = signal<boolean>(false);
 
+  // Form Signals
+  readonly contactName = signal<string>('');
+  readonly contactEmail = signal<string>('');
+  readonly contactSubject = signal<string>('');
+  readonly contactMessage = signal<string>('');
+  readonly isSubmitting = signal<boolean>(false);
+  readonly isMessageSent = signal<boolean>(false);
+  readonly formError = signal<string | null>(null);
+
+  async submitContactForm(event?: Event): Promise<void> {
+    if (event) {
+      event.preventDefault();
+    }
+    const name = this.contactName().trim();
+    const email = this.contactEmail().trim();
+    const subject = this.contactSubject().trim() || (this.currentLang() === 'fr' ? 'Nouveau message depuis le portfolio' : 'New portfolio message');
+    const message = this.contactMessage().trim();
+
+    if (!name || !email || !message) {
+      return;
+    }
+
+    this.isSubmitting.set(true);
+    this.formError.set(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '31422398-b1e2-43ae-adb1-32b6ebf48f9c',
+          name: name,
+          email: email,
+          subject: `[Portfolio] ${subject}`,
+          message: message,
+          from_name: 'Portfolio Mathieu Ricard'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        this.isMessageSent.set(true);
+        this.contactName.set('');
+        this.contactEmail.set('');
+        this.contactSubject.set('');
+        this.contactMessage.set('');
+      } else {
+        this.formError.set(data.message || this.t().formErrorDesc);
+      }
+    } catch {
+      this.formError.set(this.t().formErrorDesc);
+    } finally {
+      this.isSubmitting.set(false);
+    }
+  }
+
+  resetContactForm(): void {
+    this.isMessageSent.set(false);
+    this.formError.set(null);
+  }
+
   openLinkedIn(): void {
     if (typeof window !== 'undefined') {
       window.open('https://www.linkedin.com/in/math-ricard/', '_blank', 'noopener,noreferrer');
