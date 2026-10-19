@@ -131,7 +131,7 @@ export const TRANSLATIONS = {
     heroGreetingEvening: "Good evening, I am",
     heroName: "Mathieu Ricard",
     heroRole: "Full-Stack .NET Developer & Software Engineer",
-    heroLocation: "Greater Montreal, Quebec 🇨🇦",
+    heroLocation: "Longueuil, Quebec 🇨🇦",
     heroDesc: "Full-Stack .NET Developer with 5 years of professional experience building enterprise SaaS platforms, native desktop apps, mobile solutions, and industrial systems. Specialized in C#, ASP.NET Core, EF Core, microservices, and creator of CherryHud.",
     btnViewCherryHud: "Discover CherryHud",
     btnViewExperience: "View Career",
