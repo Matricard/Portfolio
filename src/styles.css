@@ -260,8 +260,24 @@ html.light button.glass-panel .text-white {
   color: #0f172a !important;
 }
 
-html.light button.glass-panel:hover .text-white,
-html.light button.glass-panel:hover .text-slate-900 {
+/* Contact Cards Value Text */
+.contact-card-value {
+  color: #ffffff;
+}
+
+html.light .contact-card-value {
+  color: #0f172a !important;
+}
+
+html.light .contact-card-email:hover .contact-card-value {
+  color: #4f46e5 !important;
+}
+
+html.light .contact-card-linkedin:hover .contact-card-value {
+  color: #2563eb !important;
+}
+
+html.light .contact-card-github:hover .contact-card-value {
   color: #4f46e5 !important;
 }
 

@@ -610,7 +610,7 @@
         <!-- Email Card (Click full card to copy) -->
         <button (click)="ps.copyEmail()" 
                 type="button" 
-                class="w-full glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-indigo-500/40 transition-all cursor-pointer text-left"
+                class="w-full glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-indigo-500/40 transition-all cursor-pointer text-left contact-card-email"
                 [title]="ps.t().btnCopyEmail">
           <div class="flex items-center gap-3 min-w-0">
             <div class="p-2.5 rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 group-hover:scale-105 transition-transform shrink-0">
@@ -618,7 +618,7 @@
             </div>
             <div class="min-w-0">
               <div class="text-xs font-mono uppercase tracking-wider text-slate-400">{{ ps.t().contactEmailLabel }}</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors truncate">
+              <div class="contact-card-value text-sm font-bold group-hover:text-indigo-300 transition-colors truncate">
                 {{ ps.email }}
               </div>
             </div>
@@ -631,8 +631,7 @@
                       class="w-4 h-4 transition-colors" 
                       [class.text-emerald-400]="ps.isEmailCopied()" 
                       [class.text-slate-500]="!ps.isEmailCopied()" 
-                      [class.group-hover:text-indigo-600]="!ps.isEmailCopied()"
-                      [class.dark:group-hover:text-indigo-300]="!ps.isEmailCopied()"></app-icon>
+                      [class.group-hover:text-indigo-300]="!ps.isEmailCopied()"></app-icon>
           </div>
         </button>
 
@@ -640,34 +639,34 @@
         <a href="https://www.linkedin.com/in/math-ricard/" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-blue-500/40 transition-all">
+           class="glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-blue-500/40 transition-all contact-card-linkedin">
           <div class="flex items-center gap-3">
             <div class="p-2.5 rounded-xl bg-[#0077b5]/15 border border-[#0077b5]/30 text-blue-400 group-hover:scale-105 transition-transform">
               <app-icon name="linkedin" class="w-5 h-5"></app-icon>
             </div>
             <div>
               <div class="text-xs font-mono uppercase tracking-wider text-slate-400">LinkedIn</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">Mathieu Ricard</div>
+              <div class="contact-card-value text-sm font-bold group-hover:text-blue-300 transition-colors">Mathieu Ricard</div>
             </div>
           </div>
-          <app-icon name="external-link" class="w-4 h-4 text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"></app-icon>
+          <app-icon name="external-link" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors"></app-icon>
         </a>
 
         <!-- GitHub Card -->
         <a href="https://github.com/Matricard" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-white/30 transition-all">
+           class="glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-white/30 transition-all contact-card-github">
           <div class="flex items-center gap-3">
             <div class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 group-hover:scale-105 transition-transform">
               <app-icon name="github" class="w-5 h-5"></app-icon>
             </div>
             <div>
               <div class="text-xs font-mono uppercase tracking-wider text-slate-400">GitHub</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">&#64;Matricard</div>
+              <div class="contact-card-value text-sm font-bold group-hover:text-indigo-300 transition-colors">&#64;Matricard</div>
             </div>
           </div>
-          <app-icon name="external-link" class="w-4 h-4 text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white transition-colors"></app-icon>
+          <app-icon name="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></app-icon>
         </a>
       </div>
 
