@@ -58,10 +58,24 @@ export class PortfolioService {
       }
     });
 
+    // Effect for dynamic URL hash update on activeSection change
+    effect(() => {
+      const section = this.activeSection();
+      if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
+        const newHash = `#${section}`;
+        if (window.location.hash !== newHash) {
+          try {
+            window.history.replaceState(null, '', newHash);
+          } catch {}
+        }
+      }
+    });
+
     // Scroll spy listener
     if (typeof window !== 'undefined') {
+      const sectionIds = ['about', 'projects', 'experience', 'skills', 'contact'];
+
       const handleScroll = () => {
-        const sectionIds = ['about', 'projects', 'experience', 'skills', 'contact'];
         const scrollPosition = window.scrollY + 220;
 
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
@@ -76,7 +90,13 @@ export class PortfolioService {
             return;
           }
         }
+        this.activeSection.set('about');
       };
+
+      const currentHash = window.location.hash.replace('#', '');
+      if (sectionIds.includes(currentHash)) {
+        this.activeSection.set(currentHash);
+      }
 
       window.addEventListener('scroll', handleScroll, { passive: true });
       setTimeout(handleScroll, 120);

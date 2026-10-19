@@ -3,9 +3,9 @@ import { JobExperience, SkillGroup } from '../models/portfolio.model';
 export const TRANSLATIONS = {
   fr: {
     // Navigation
-    navAbout: "À propos",
+    navAbout: "Profil",
     navProjects: "Projets",
-    navExperience: "Expériences",
+    navExperience: "Parcours",
     navSkills: "Compétences",
     navEducation: "Formation",
     navContact: "Contact",
@@ -20,6 +20,7 @@ export const TRANSLATIONS = {
     heroDesc: "Développeur Full-Stack .NET cumulant 5 ans d'expérience dans la conception de solutions Web SaaS, desktop, mobiles et industrielles. Spécialisé en C#, ASP.NET Core, EF Core, microservices et créateur de CherryHud.",
     btnViewCherryHud: "Découvrir CherryHud",
     btnViewExperience: "Voir mon parcours",
+    heroCoreSkills: "Compétences principales",
 
     // Key Stats
     statExp: "5+ Années",
@@ -55,9 +56,9 @@ export const TRANSLATIONS = {
     chBtnDownload: "Télécharger (.dmg)",
 
     // Experience Section
-    expSectionBadge: "PARCOURS PROFESSIONNEL",
-    expSectionTitle: "Expériences en entreprise",
-    expSectionSubtitle: "5 ans de réalisations concrètes en SaaS, systèmes industriels critiques, assurance qualité et automatisation.",
+    expSectionBadge: "PARCOURS",
+    expSectionTitle: "Mon Parcours",
+    expSectionSubtitle: "5 ans de réalisations concrètes en SaaS, systèmes industriels critiques, assurance qualité et formation technique.",
 
     // Skills Section
     skillsSectionBadge: "EXPERTISE TECHNIQUE",
@@ -65,11 +66,11 @@ export const TRANSLATIONS = {
     skillsSectionSubtitle: "Maîtrise approfondie de l'écosystème Microsoft, du développement moderne et des méthodologies agiles.",
 
     // Education & Languages
-    eduSectionBadge: "FORMATION & DIPLÔME",
+    eduSectionBadge: "FORMATION",
     eduDiploma: "DEC technique en informatique",
     eduSchool: "Collège de Maisonneuve, Montréal",
     eduDate: "Diplômé en Juin 2021",
-    eduDateBadge: "Juin 2021",
+    eduDateBadge: "DIPLÔME",
     eduDesc: "Formation technique approfondie axée sur l'analyse, la programmation orientée objet, les bases de données relationnelles, les réseaux et l'architecture logicielle.",
     langSectionBadge: "PROFIL LINGUISTIQUE",
     langFrLevel: "Langue maternelle (Natif)",
@@ -97,9 +98,9 @@ export const TRANSLATIONS = {
 
   en: {
     // Navigation
-    navAbout: "About",
+    navAbout: "Profile",
     navProjects: "Projects",
-    navExperience: "Experience",
+    navExperience: "Career",
     navSkills: "Skills",
     navEducation: "Education",
     navContact: "Contact",
@@ -113,7 +114,8 @@ export const TRANSLATIONS = {
     heroLocation: "Longueuil, Quebec 🇨🇦",
     heroDesc: "Full-Stack .NET Developer with 5 years of professional experience building enterprise SaaS platforms, native desktop apps, mobile solutions, and industrial systems. Specialized in C#, ASP.NET Core, EF Core, microservices, and creator of CherryHud.",
     btnViewCherryHud: "Discover CherryHud",
-    btnViewExperience: "View Experience",
+    btnViewExperience: "View Career",
+    heroCoreSkills: "Core Skills",
 
     // Key Stats
     statExp: "5+ Years",
@@ -149,9 +151,9 @@ export const TRANSLATIONS = {
     chBtnDownload: "Download (.dmg)",
 
     // Experience Section
-    expSectionBadge: "CAREER TIMELINE",
-    expSectionTitle: "Professional Experience",
-    expSectionSubtitle: "5 years of tangible impact across SaaS, mission-critical industrial software, QA automation, and builds.",
+    expSectionBadge: "CAREER",
+    expSectionTitle: "Career Journey",
+    expSectionSubtitle: "5 years of tangible impact across SaaS, mission-critical industrial software, QA automation, and foundational training.",
 
     // Skills Section
     skillsSectionBadge: "TECHNICAL EXPERTISE",
@@ -159,11 +161,11 @@ export const TRANSLATIONS = {
     skillsSectionSubtitle: "In-depth mastery of the Microsoft ecosystem, modern web technologies, and clean software engineering.",
 
     // Education & Languages
-    eduSectionBadge: "EDUCATION & DEGREE",
+    eduSectionBadge: "EDUCATION",
     eduDiploma: "Technical College Degree (DEC) in Computer Science",
     eduSchool: "Collège de Maisonneuve, Montreal",
     eduDate: "Graduated June 2021",
-    eduDateBadge: "June 2021",
+    eduDateBadge: "DEGREE",
     eduDesc: "Rigorous technical program covering object-oriented design, relational databases, distributed networking, and software architecture.",
     langSectionBadge: "LANGUAGE PROFICIENCY",
     langFrLevel: "Native Language",
@@ -310,8 +312,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Minimal APIs", isHighlight: true },
       { name: "Entity Framework Core", isHighlight: true },
       { name: "SQL Server / SQL", isHighlight: true },
-      { name: "TypeScript" },
-      { name: "JavaScript" },
+      { name: "TypeScript", isHighlight: true },
+      { name: "JavaScript", isHighlight: true },
       { name: "PowerShell" },
       { name: "Dart" }
     ]
@@ -343,7 +345,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "macOS Native (Metal / Apple Silicon)", isHighlight: true },
       { name: "Vue.js", isHighlight: true },
       { name: "Angular", isHighlight: true },
-      { name: "Flutter" },
+      { name: "Flutter", isHighlight: true },
       { name: "Kotlin" },
       { name: "Swift" },
       { name: "Tailwind CSS" }

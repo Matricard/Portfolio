@@ -130,7 +130,7 @@
           <span class="text-slate-600">:</span>
           <span class="text-cyan-300">~</span>
           <span class="text-slate-600">$</span>
-          <span class="text-slate-300">dotnet-pro</span>
+          <span class="text-slate-300">full-stack</span>
         </div>
 
         <!-- Right window info -->
@@ -236,11 +236,6 @@
   <!-- PROJECTS SECTION (CHERRYHUD SPOTLIGHT) -->
   <section id="projects" class="scroll-mt-24 space-y-10">
     <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center max-w-3xl mx-auto space-y-3 shadow-xl">
-      <div>
-        <span class="inline-block text-xs font-mono uppercase tracking-widest text-rose-400 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20">
-          {{ ps.t().projectsSectionBadge }}
-        </span>
-      </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
         {{ ps.t().projectsSectionTitle }}
       </h2>
@@ -333,11 +328,6 @@
   <!-- EXPERIENCE SECTION (TIMELINE) -->
   <section id="experience" class="scroll-mt-24 space-y-10">
     <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center max-w-3xl mx-auto space-y-3 shadow-xl">
-      <div>
-        <span class="inline-block text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
-          {{ ps.t().expSectionBadge }}
-        </span>
-      </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
         {{ ps.t().expSectionTitle }}
       </h2>
@@ -405,17 +395,62 @@
         </div>
       }
 
+      <!-- Academic Education / Diplôme Milestone -->
+      <div class="relative pl-6 sm:pl-10 group">
+        
+        <!-- Marker -->
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ring-4 ring-[#0a0d14] group-hover:scale-125 transition-transform shadow-lg bg-emerald-500"></div>
+
+        <!-- Desktop Date -->
+        <div class="md:absolute md:-left-40 md:top-1 mb-2 md:mb-0 md:text-right md:w-32">
+          <span class="glass-panel px-2.5 py-1 rounded-lg text-xs font-mono text-emerald-400 font-semibold shadow-sm inline-block">
+            {{ ps.t().eduDateBadge }}
+          </span>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4 border-emerald-500/20">
+          
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-4">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                {{ ps.t().eduDiploma }}
+              </h3>
+              <div class="text-base font-semibold text-slate-300 flex items-center gap-2">
+                <span>{{ ps.t().eduSchool }}</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">
+                  {{ ps.t().eduSectionBadge }}
+                </span>
+              </div>
+            </div>
+
+            <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+              <app-icon name="graduation-cap" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
+              <span>{{ ps.t().eduDate }}</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            {{ ps.t().eduDesc }}
+          </p>
+
+          <!-- Key Disciplines Badges -->
+          <div class="pt-3 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Analyse & POO' : 'Analysis & OOP' }}</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Bases de données' : 'Databases & SQL' }}</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Architecture logicielle' : 'Software Architecture' }}</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Réseaux' : 'Networking' }}</span>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="scroll-mt-24 space-y-10">
     <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center max-w-3xl mx-auto space-y-3 shadow-xl">
-      <div>
-        <span class="inline-block text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
-          {{ ps.t().skillsSectionBadge }}
-        </span>
-      </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
         {{ ps.t().skillsSectionTitle }}
       </h2>
@@ -446,48 +481,6 @@
         </div>
       }
     </div>
-
-    <!-- Academic Education / Diplôme Card -->
-    <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4 border-emerald-500/20">
-      <div class="space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-3">
-          <div class="flex items-center gap-3">
-            <div class="p-2.5 rounded-xl border text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
-              <app-icon name="graduation-cap" class="w-5 h-5"></app-icon>
-            </div>
-            <div>
-              <span class="text-xs font-mono uppercase tracking-widest text-emerald-400">
-                {{ ps.t().eduSectionBadge }}
-              </span>
-              <h3 class="text-lg font-bold text-white">
-                {{ ps.t().eduDiploma }}
-              </h3>
-            </div>
-          </div>
-
-          <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5 shrink-0">
-            <app-icon name="calendar" class="w-3.5 h-3.5 text-emerald-400"></app-icon>
-            <span>{{ ps.t().eduDateBadge }}</span>
-          </div>
-        </div>
-
-        <div class="text-sm font-semibold text-slate-300">
-          {{ ps.t().eduSchool }}
-        </div>
-
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          {{ ps.t().eduDesc }}
-        </p>
-      </div>
-
-      <!-- Key Disciplines Badges -->
-      <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-        <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Analyse & POO' : 'Analysis & OOP' }}</span>
-        <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Bases de données' : 'Databases & SQL' }}</span>
-        <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Architecture logicielle' : 'Software Architecture' }}</span>
-        <span class="px-2.5 py-1 rounded-lg bg-white/5 text-slate-200 border border-white/10">{{ ps.currentLang() === 'fr' ? 'Réseaux' : 'Networking' }}</span>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT SECTION -->
@@ -502,9 +495,6 @@
         
         <!-- Section Header -->
         <div class="space-y-3">
-          <span class="inline-block text-xs font-mono uppercase tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
-            {{ ps.t().contactSectionBadge }}
-          </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             {{ ps.t().contactSectionTitle }}
           </h2>
