@@ -229,6 +229,22 @@ html.light .bg-black\/50 {
   border-bottom-color: rgba(148, 163, 184, 0.28) !important;
 }
 
+html.light .hero-terminal-title {
+  color: #475569 !important;
+}
+
+html.light .hero-terminal-title .text-indigo-400 {
+  color: #4338ca !important;
+}
+
+html.light .hero-terminal-title .text-cyan-300 {
+  color: #0e7490 !important;
+}
+
+html.light .hero-terminal-title .text-slate-300 {
+  color: #1e293b !important;
+}
+
 /* CherryHud Spotlight Card */
 html.light .glass-cherry {
   background: linear-gradient(135deg, rgba(254, 226, 226, 0.3) 0%, rgba(226, 232, 240, 0.45) 100%) !important;
