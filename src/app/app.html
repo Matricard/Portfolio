@@ -635,6 +635,23 @@
           </div>
         </button>
 
+        <!-- Resume / CV Card -->
+        <a [href]="ps.currentLang() === 'fr' ? 'docs/Mathieu_Ricard_CV_Fr.pdf' : 'docs/Mathieu_Ricard_CV_En.pdf'" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="glass-panel p-5 rounded-2xl flex items-center justify-between group hover:border-emerald-500/40 transition-all contact-card-cv">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
+              <app-icon name="file-text" class="w-5 h-5"></app-icon>
+            </div>
+            <div>
+              <div class="text-xs font-mono uppercase tracking-wider text-slate-400">{{ ps.t().contactCvLabel }}</div>
+              <div class="contact-card-value text-sm font-bold group-hover:text-emerald-300 transition-colors">{{ ps.t().contactCvAction }}</div>
+            </div>
+          </div>
+          <app-icon name="external-link" class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors"></app-icon>
+        </a>
+
         <!-- LinkedIn Card -->
         <a href="https://www.linkedin.com/in/math-ricard/" 
            target="_blank" 

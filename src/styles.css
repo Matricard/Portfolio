@@ -273,6 +273,10 @@ html.light .contact-card-email:hover .contact-card-value {
   color: #4f46e5 !important;
 }
 
+html.light .contact-card-cv:hover .contact-card-value {
+  color: #059669 !important;
+}
+
 html.light .contact-card-linkedin:hover .contact-card-value {
   color: #2563eb !important;
 }
