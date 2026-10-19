@@ -157,6 +157,26 @@ html.light .tech-grid {
   background: rgba(148, 163, 184, 0.4);
 }
 
+/* Hero Tech Badges */
+.hero-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  background-color: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  color: #c7d2fe;
+  transition: all 0.2s ease;
+}
+
+.hero-tech-badge:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #e0e7ff;
+}
+
 /* ==========================================================================
    LIGHT THEME ADVANCED RULES (Autumn Light Theme)
    ========================================================================== */
@@ -247,9 +267,10 @@ html.light .text-slate-500 {
 }
 
 /* Vivid accent text for light background */
+html.light .text-indigo-200,
 html.light .text-indigo-300,
 html.light .text-indigo-400 {
-  color: #4338ca !important;
+  color: #3730a3 !important;
 }
 
 html.light .text-cyan-300,
@@ -366,6 +387,26 @@ html.light .border-white\/20 {
 }
 
 /* Tech Badges in Hero */
+html.light .hero-tech-badge {
+  background-color: #e0e7ff !important;
+  border: 1px solid #c7d2fe !important;
+  color: #3730a3 !important;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.08) !important;
+}
+
+html.light .hero-tech-badge:hover {
+  background-color: #c7d2fe !important;
+  border-color: #a5b4fc !important;
+  color: #1e1b4b !important;
+}
+
+html.light .bg-indigo-500\/10,
+html.light .bg-indigo-500\/15 {
+  background-color: #e0e7ff !important;
+  border-color: #c7d2fe !important;
+  color: #3730a3 !important;
+}
+
 html.light .bg-indigo-950\/60 {
   background-color: #e0e7ff !important;
   border-color: #c7d2fe !important;

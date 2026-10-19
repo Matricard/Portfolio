@@ -12,7 +12,7 @@ export const TRANSLATIONS = {
     btnContact: "Me Contacter",
 
     // Hero
-    statusBadge: "Disponible pour opportunités Full-Stack .NET",
+    statusBadge: "Disponible pour de nouvelles opportunités",
     heroGreeting: "Bonjour, je suis",
     heroName: "Mathieu Ricard",
     heroRole: "Développeur Full-Stack .NET & Concepteur Logiciel",
@@ -79,7 +79,7 @@ export const TRANSLATIONS = {
     // Contact Section
     contactSectionBadge: "CONTACT DIRECT",
     contactSectionTitle: "Discutons ensemble",
-    contactSectionSubtitle: "Vous avez une opportunité en développement Full-Stack .NET ou un projet en tête ? Contactez-moi directement par courriel !",
+    contactSectionSubtitle: "Vous avez une opportunité ou un projet en tête ? Contactez-moi directement par courriel !",
     contactEmailLabel: "Courriel Direct",
     contactEmailDesc: "mat.ricard3@outlook.com",
     contactLinkedInLabel: "LinkedIn Professionnel",
@@ -107,7 +107,7 @@ export const TRANSLATIONS = {
     btnContact: "Get in Touch",
 
     // Hero
-    statusBadge: "Open for Full-Stack .NET roles",
+    statusBadge: "Open to new opportunities",
     heroGreeting: "Hello, I am",
     heroName: "Mathieu Ricard",
     heroRole: "Full-Stack .NET Developer & Software Engineer",
@@ -174,7 +174,7 @@ export const TRANSLATIONS = {
     // Contact Section
     contactSectionBadge: "DIRECT CONTACT",
     contactSectionTitle: "Let's Connect",
-    contactSectionSubtitle: "Have an opportunity in Full-Stack .NET development or a project in mind? Reach out to me directly by email!",
+    contactSectionSubtitle: "Have an opportunity or a project in mind? Reach out to me directly by email!",
     contactEmailLabel: "Direct Email",
     contactEmailDesc: "mat.ricard3@outlook.com",
     contactLinkedInLabel: "Professional LinkedIn",
