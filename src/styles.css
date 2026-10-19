@@ -340,6 +340,23 @@ html.light button.bg-slate-800:hover {
   background-color: rgba(203, 213, 225, 0.55) !important;
 }
 
+/* Precise centering for theme toggle and square icon buttons */
+header button.w-8 {
+  width: 2rem !important;
+  height: 2rem !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+header button.w-8 app-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: auto !important;
+}
+
 /* Mobile Dropdown Menu */
 html.light .md\:hidden.glass-panel {
   background-color: rgba(226, 232, 240, 0.65) !important;

@@ -12,6 +12,8 @@ export class PortfolioService {
   readonly isMobileMenuOpen = signal<boolean>(false);
   readonly activeSection = signal<string>('about');
 
+  readonly isEvening = signal<boolean>(false);
+
   // Structured data
   readonly experiences: JobExperience[] = EXPERIENCES;
   readonly skillGroups: SkillGroup[] = SKILL_GROUPS;
@@ -19,20 +21,43 @@ export class PortfolioService {
   // Computed translations based on current language
   readonly t = computed(() => TRANSLATIONS[this.currentLang()]);
 
+  // Context-aware greeting based on day vs evening
+  readonly heroGreeting = computed(() => {
+    return this.isEvening() ? this.t().heroGreetingEvening : this.t().heroGreetingDay;
+  });
+
   constructor() {
+    const checkIsEvening = (): boolean => {
+      const hour = new Date().getHours();
+      return hour >= 18 || hour < 6;
+    };
+
+    const isEveningTime = checkIsEvening();
+    this.isEvening.set(isEveningTime);
+
     // Load initial preferences from localStorage if available
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const savedLang = localStorage.getItem('portfolio_lang') as Language;
-      if (savedLang === 'fr' || savedLang === 'en') {
-        this.currentLang.set(savedLang);
+    if (typeof window !== 'undefined') {
+      if (window.localStorage) {
+        const savedLang = localStorage.getItem('portfolio_lang') as Language;
+        if (savedLang === 'fr' || savedLang === 'en') {
+          this.currentLang.set(savedLang);
+        }
+
+        const savedTheme = localStorage.getItem('portfolio_theme') as Theme;
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+          this.currentTheme.set(savedTheme);
+        } else {
+          // Automatic theme based on time of day: dark in evening/night, light during day
+          this.currentTheme.set(isEveningTime ? 'dark' : 'light');
+        }
+      } else {
+        this.currentTheme.set(isEveningTime ? 'dark' : 'light');
       }
 
-      const savedTheme = localStorage.getItem('portfolio_theme') as Theme;
-      if (savedTheme === 'light' || savedTheme === 'dark') {
-        this.currentTheme.set(savedTheme);
-      } else {
-        this.currentTheme.set('light');
-      }
+      // Periodically refresh day/evening state every minute
+      setInterval(() => {
+        this.isEvening.set(checkIsEvening());
+      }, 60000);
     }
 
     // Effect for Theme class on <html>

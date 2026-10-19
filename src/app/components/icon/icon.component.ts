@@ -5,8 +5,21 @@ import { CommonModule } from '@angular/common';
   selector: 'app-icon',
   standalone: true,
   imports: [CommonModule],
+  styles: [`
+    :host {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+    svg {
+      display: block;
+    }
+  `],
   template: `
-    <span [ngSwitch]="name" [class]="'inline-flex items-center justify-center ' + class">
+    <span [ngSwitch]="name" [class]="'inline-flex items-center justify-center leading-none ' + class">
       
       <!-- GitHub -->
       <svg *ngSwitchCase="'github'" class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
